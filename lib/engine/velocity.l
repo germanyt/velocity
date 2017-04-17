@@ -19,6 +19,7 @@ LP  (?=[ \t]*\()
 
 %%
 
+\$[\s\S]+(\([\s\S]*\))              {                        return 'RTEXT'; }
 ("\$"|"\#"|[^\$\#])+                {                        return 'TEXT'; }
 "#[["[\s\S]*?"]]#"                  {                        return 'BTEXT'; }
 "##".*                              {                        return 'COMMENT'; }

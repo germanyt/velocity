@@ -31,6 +31,7 @@ statement
   | BTEXT                             { $$ = {type: 'BText', pos: @$, value: $1.replace(/^#\[\[|\]\]#/g, '')}; }
   | COMMENT                           { $$ = {type: 'Comment', pos: @$, value: $1.replace(/^##/, '')}; }
   | BCOMMENT                          { $$ = {type: 'BComment', pos: @$, value: $1.replace(/^#\*|\*#$/g, '')}; }
+  | RTEXT                             { $$ = $1; }
   | reference                         { $$ = $1; }
   | directive                         { $$ = $1; }
   ;
