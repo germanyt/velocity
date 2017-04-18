@@ -19,7 +19,7 @@ LP  (?=[ \t]*\()
 
 %%
 
-\$[\s\S]+(\([\s\S]*\))              {                        return 'TEXT'; }
+\$\w+(?=\()                             {                        return 'TEXT'; }
 ("\$"|"\#"|[^\$\#])+                {                        return 'TEXT'; }
 "#[["[\s\S]*?"]]#"                  {                        return 'BTEXT'; }
 "##".*                              {                        return 'COMMENT'; }
